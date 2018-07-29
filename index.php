@@ -4,7 +4,13 @@ require 'vendor/autoload.php';
 $app = new Slim\App();
 
 //GET Route
-$app->get('/books/{id}', function ($request, $response, $args) {
+$app->get('/', function ($request, $response, $args){
+    $args = "Bem-vindo ao webservice em php, por Maicon Alentejo";
+    return $args;
+});
+
+
+$app->get('/books/{id}', function ($request, $response, $args){
     // Show book identified by $args['id']
     //$array_content = array('primeiro', 'segundo', 'terceiro' );
     //$array_content[] = $args['id'];
